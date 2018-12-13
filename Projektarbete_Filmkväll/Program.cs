@@ -7,7 +7,7 @@ using System.Threading;
 
 namespace Projektarbete_Filmkväll
 {
-    class Program
+    public class Program
     {
         private static List<TV> ListOfTV = new List<TV>();
         private static List<Cinema> ListOfCinema = new List<Cinema>();
