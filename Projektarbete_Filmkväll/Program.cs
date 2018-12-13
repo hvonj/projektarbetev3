@@ -145,22 +145,32 @@ namespace Projektarbete_Filmkväll
                         Console.ResetColor();
                         continue;
                     }
-
-                    else if (userinput[1].ToLower() == "hemmakväll")
+                    else
                     {
-                        if (!ListOfTV.Any(x => x.Genre == userinput[2].ToLower()))
-                        {
-
-                            Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine("Den genren har vi inte ikväll, välj en annan eller 'alla' för att se vad som finns!");
-                            Console.ResetColor();
-                            continue;
-                        }
-
+                        break;
                     }
                 }
+                else if (userinput[1].ToLower() == "hemmakväll")
+                {
+                    if (!ListOfTV.Any(x => x.Genre == userinput[2].ToLower()))
+                    {
+
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Den genren har vi inte ikväll, välj en annan eller 'alla' för att se vad som finns!");
+                        Console.ResetColor();
+                        continue;
+                    }
+                    else
+                    {
+                        break;
+                    }
+
+                }
+
                 else
+                {
                     break;
+                }
             }
 
 
