@@ -86,9 +86,8 @@ namespace Projektarbete_Filmkväll
                     userinput[0] = "Gäst";
                 }
             }
-            Console.WriteLine();
+
             Console.WriteLine($"Välkommen {userinput[0]}! Känner du för hemmakväll eller bio idag (skriv 'allt' för att visa hela tablån)?");
-            
 
 
             while (true)
@@ -145,32 +144,22 @@ namespace Projektarbete_Filmkväll
                         Console.ResetColor();
                         continue;
                     }
-                    else
+
+                    else if (userinput[1].ToLower() == "hemmakväll")
                     {
-                        break;
+                        if (!ListOfTV.Any(x => x.Genre == userinput[2].ToLower()))
+                        {
+
+                            Console.ForegroundColor = ConsoleColor.Red;
+                            Console.WriteLine("Den genren har vi inte ikväll, välj en annan eller 'alla' för att se vad som finns!");
+                            Console.ResetColor();
+                            continue;
+                        }
+
                     }
                 }
-                else if (userinput[1].ToLower() == "hemmakväll")
-                {
-                    if (!ListOfTV.Any(x => x.Genre == userinput[2].ToLower()))
-                    {
-
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Den genren har vi inte ikväll, välj en annan eller 'alla' för att se vad som finns!");
-                        Console.ResetColor();
-                        continue;
-                    }
-                    else
-                    {
-                        break;
-                    }
-
-                }
-
                 else
-                {
                     break;
-                }
             }
 
 
@@ -257,6 +246,8 @@ namespace Projektarbete_Filmkväll
                 {
                     Console.WriteLine($"{show.Name} klockan {show.Time} på {show.Channel}");
                 }
+
+                
             }
 
             else
@@ -325,6 +316,7 @@ namespace Projektarbete_Filmkväll
             {
                 List<Cinema> cinemaGenre = listOfCinema.Where(x => x.Age <= age2 && x.Time >= tid2).ToList();
                 List<Cinema> newCnew = cinemaGenre.OrderBy(x => x.Time).ToList();
+
                 foreach (var show in newCnew)
                 {
                     Console.WriteLine($"{show.Name} klockan {show.Time} på {show.Channel}");
@@ -334,6 +326,7 @@ namespace Projektarbete_Filmkväll
             {
                 List<TV> tVGenre = listofTV.Where(x => x.Age <= age2 && x.Time >= tid2).ToList();
                 List<TV> newTnew = tVGenre.OrderBy(x => x.Time).ToList();
+
                 foreach (var show in newTnew)
                 {
                     Console.WriteLine($"{show.Name} klockan {show.Time} på {show.Channel}");
@@ -344,6 +337,7 @@ namespace Projektarbete_Filmkväll
 }
 
 
+// Användaren ska kunna skriva med stora och små bokstäver
 // Exception på genre (lägg till så att användaren inte kan söka på genre som inte finns... "Den genre du angav finns inte tillgänglig ikväll"
 // Gör textfärger, ändra typsnitt och storlek 
 // Clean code (Linq)
