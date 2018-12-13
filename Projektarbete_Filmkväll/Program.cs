@@ -94,10 +94,10 @@ namespace Projektarbete_Filmkväll
             {
                 userinput[1] = Console.ReadLine();
 
-                if (!(userinput[1] == "hemmakväll" || userinput[1] == "bio" || userinput[1] == "allt"))
+                if (!(userinput[1].ToLower() == "hemmakväll" || userinput[1].ToLower() == "bio" || userinput[1].ToLower() == "allt"))
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Du måste ange hemmakväll eller bio)! \n");
+                    Console.WriteLine("Du måste ange hemmakväll eller bio!) \n");
                     Console.ResetColor();
                     continue;
                 }
@@ -105,7 +105,7 @@ namespace Projektarbete_Filmkväll
                     break;
 
             }
-            if (userinput[1] == "allt")
+            if (userinput[1].ToLower() == "allt")
             {
                 IfNothingIsApplied(listOfCinema, listOfTV);
                 Console.WriteLine("Slut!");
