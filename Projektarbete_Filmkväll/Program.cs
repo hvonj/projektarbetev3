@@ -87,7 +87,7 @@ namespace Projektarbete_Filmkväll
                 }
             }
 
-            Console.WriteLine($"Välkommen {userinput[0]}! Känner du för hemmakväll eller bio idag (skriv 'allt' för att visa hela tablån)?");
+            Console.WriteLine($"\nVälkommen {userinput[0]}! Känner du för hemmakväll eller bio idag (skriv 'allt' för att visa hela tablån)?");
 
 
             while (true)
@@ -97,7 +97,7 @@ namespace Projektarbete_Filmkväll
                 if (!(userinput[1].ToLower() == "hemmakväll" || userinput[1].ToLower() == "bio" || userinput[1].ToLower() == "allt"))
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Du måste ange hemmakväll eller bio!) \n");
+                    Console.WriteLine("Du måste ange hemmakväll eller bio! \n");
                     Console.ResetColor();
                     continue;
                 }
@@ -227,7 +227,7 @@ namespace Projektarbete_Filmkväll
 
             if(userinput[2] == "alla")
             {
-                Console.WriteLine($"Dessa filmer rekommenderar vi för ikväll!)");
+                Console.WriteLine($"Dessa filmer rekommenderar vi för ikväll!");
                 Console.WriteLine();
 
                 GetAllGenres(listOfTV, listOfCinema, userinput);
