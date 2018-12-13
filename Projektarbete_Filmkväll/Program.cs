@@ -86,8 +86,9 @@ namespace Projektarbete_Filmkväll
                     userinput[0] = "Gäst";
                 }
             }
-
+            Console.WriteLine();
             Console.WriteLine($"Välkommen {userinput[0]}! Känner du för hemmakväll eller bio idag (skriv 'allt' för att visa hela tablån)?");
+            
 
 
             while (true)
@@ -319,7 +320,6 @@ namespace Projektarbete_Filmkväll
 }
 
 
-// Användaren ska kunna skriva med stora och små bokstäver
 // Exception på genre (lägg till så att användaren inte kan söka på genre som inte finns... "Den genre du angav finns inte tillgänglig ikväll"
 // Gör textfärger, ändra typsnitt och storlek 
 // Clean code (Linq)
