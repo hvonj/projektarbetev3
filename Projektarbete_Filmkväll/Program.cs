@@ -44,15 +44,15 @@ namespace Projektarbete_Filmkväll
         private static void FilmkollenIntro()
         {
             Console.WriteLine("\n\n\n");
-            Console.WriteLine("* * * * *    *   *           *         *  *       *     * *     *          *          *");
-            Console.WriteLine("*            *   *           *  *   *  *  *     *     *     *   *          *          *");
-            Console.WriteLine("*            *   *           *    *    *  *   *      *       *  *          *          *");
-            Console.WriteLine("* * * *      *   *           *         *  * *        *       *  *          *          *");
-            Console.WriteLine("*            *   *           *         *  *   *      *       *  *          *          *");
-            Console.WriteLine("*            *   *           *         *  *     *     *     *   *          *           ");
-            Console.WriteLine("*            *   * * * * *   *         *  *       *     * *     * * * * *  * * * * *  *");
+            Console.WriteLine("\t\t* * * * *    *   *           *         *  *       *     * *     *          *          *");
+            Console.WriteLine("\t\t*            *   *           *  *   *  *  *     *     *     *   *          *          *");
+            Console.WriteLine("\t\t*            *   *           *    *    *  *   *      *       *  *          *          *");
+            Console.WriteLine("\t\t* * * *      *   *           *         *  * *        *       *  *          *          *");
+            Console.WriteLine("\t\t*            *   *           *         *  *   *      *       *  *          *          *");
+            Console.WriteLine("\t\t*            *   *           *         *  *     *     *     *   *          *           ");
+            Console.WriteLine("\t\t*            *   * * * * *   *         *  *       *     * *     * * * * *  * * * * *  *");
 
-            Console.WriteLine("\nTryck på Enter för att fortsätta...");
+            Console.WriteLine("\n\t\t\t\t\tTryck på Enter för att fortsätta...");
             Console.ReadKey();
             Console.Clear();
         }
