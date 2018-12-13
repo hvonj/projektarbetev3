@@ -44,15 +44,15 @@ namespace Projektarbete_Filmkväll
         private static void FilmkollenIntro()
         {
             Console.WriteLine("\n\n\n");
-            Console.WriteLine("* * * * *    *   *           *         *  *       *     * *     *          *          *");
-            Console.WriteLine("*            *   *           *  *   *  *  *     *     *     *   *          *          *");
-            Console.WriteLine("*            *   *           *    *    *  *   *      *       *  *          *          *");
-            Console.WriteLine("* * * *      *   *           *         *  * *        *       *  *          *          *");
-            Console.WriteLine("*            *   *           *         *  *   *      *       *  *          *          *");
-            Console.WriteLine("*            *   *           *         *  *     *     *     *   *          *           ");
-            Console.WriteLine("*            *   * * * * *   *         *  *       *     * *     * * * * *  * * * * *  *");
+            Console.WriteLine("\t\t* * * * *    *   *           *         *  *       *     * *     *          *          *");
+            Console.WriteLine("\t\t*            *   *           *  *   *  *  *     *     *     *   *          *          *");
+            Console.WriteLine("\t\t*            *   *           *    *    *  *   *      *       *  *          *          *");
+            Console.WriteLine("\t\t* * * *      *   *           *         *  * *        *       *  *          *          *");
+            Console.WriteLine("\t\t*            *   *           *         *  *   *      *       *  *          *          *");
+            Console.WriteLine("\t\t*            *   *           *         *  *     *     *     *   *          *           ");
+            Console.WriteLine("\t\t*            *   * * * * *   *         *  *       *     * *     * * * * *  * * * * *  *");
 
-            Console.WriteLine("\nTryck på Enter för att fortsätta...");
+            Console.WriteLine("\n\t\t\t\t\tTryck på Enter för att fortsätta...");
             Console.ReadKey();
             Console.Clear();
         }
@@ -186,22 +186,26 @@ namespace Projektarbete_Filmkväll
                         continue;
                     }
 
-                    else if (userinput[1].ToLower() == "hemmakväll")
-                    {
-                        if (!ListOfTV.Any(x => x.Genre == userinput[2].ToLower()))
-                        {
-
-                            Console.ForegroundColor = ConsoleColor.Red;
-                            Console.WriteLine("Den genren har vi inte ikväll, välj en annan eller 'alla' för att se vad som finns!");
-                            Console.ResetColor();
-                            continue;
-                        }
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    break;
                 }
+
+                else if (userinput[1].ToLower() == "hemmakväll")
+                {
+                    if (!ListOfTV.Any(x => x.Genre == userinput[2].ToLower()))
+                    {
+
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.WriteLine("Den genren har vi inte ikväll, välj en annan eller 'alla' för att se vad som finns!");
+                        Console.ResetColor();
+                        continue;
+                    }
+                    break;
+                }
+                else
+                {
+                    break;
+                }
+                
 
             }
 
@@ -219,7 +223,7 @@ namespace Projektarbete_Filmkväll
                     Console.ResetColor();
                     continue;
                 }
-                Match match = Regex.Match(userinput[3], @"^[0-9]\d$");
+                Match match = Regex.Match(userinput[3], @"^[0-9]+$");
                 if (!match.Success)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -294,7 +298,7 @@ namespace Projektarbete_Filmkväll
                 List<TV> newnew = newTVList.OrderBy(x => x.Time).ToList();
                 foreach (var show in newnew)
                 {
-                    Console.WriteLine($"{show.Name} klockan {show.Time} på {show.Channel}");
+                    Console.WriteLine($"{show.Name.PadRight(45)} klockan {show.Time}\t\t på {show.Channel}");
                 }
             }
             else if (userinput[1].ToLower() == "bio")
@@ -307,7 +311,7 @@ namespace Projektarbete_Filmkväll
                 List<Cinema> newCnew = newCinemaList.OrderBy(x => x.Time).ToList();
                 foreach (var show in newCnew)
                 {
-                    Console.WriteLine($"{show.Name} klockan {show.Time} på {show.Channel}");
+                    Console.WriteLine($"{show.Name.PadRight(45)} klockan {show.Time}\t\t på {show.Channel}");
                 }
             }
 
@@ -350,7 +354,7 @@ namespace Projektarbete_Filmkväll
 
             foreach (var show in SortedList)
             {
-                Console.WriteLine($"{show.Name} klockan {show.Time} på {show.Channel}");
+                Console.WriteLine($"{show.Name.PadRight(45)} klockan {show.Time}\t\t på {show.Channel}");
             }
         }
 
@@ -365,14 +369,14 @@ namespace Projektarbete_Filmkväll
             TimeSpan tid2 = TimeSpan.Parse(userinput[4]);
             string genre2 = userinput[2].ToLower();
 
-            if (userinput[1] == "bio")
+            if (userinput[1].ToLower() == "bio")
             {
                 List<Cinema> cinemaGenre = listOfCinema.Where(x => x.Age <= age2 && x.Time >= tid2).ToList();
                 List<Cinema> newCnew = cinemaGenre.OrderBy(x => x.Time).ToList();
 
                 foreach (var show in newCnew)
                 {
-                    Console.WriteLine($"{show.Name} klockan {show.Time} på {show.Channel}");
+                    Console.WriteLine($"{show.Name.PadRight(45)} klockan {show.Time}\t\t på {show.Channel}");
                 }
             }
             else
@@ -382,7 +386,7 @@ namespace Projektarbete_Filmkväll
                 
                 foreach (var show in newTnew)
                 {
-                    Console.WriteLine($"{show.Name} klockan {show.Time} på {show.Channel}");
+                    Console.WriteLine($"{show.Name.PadRight(45)} klockan {show.Time}\t\t på {show.Channel}");
                 }
             }
         }
