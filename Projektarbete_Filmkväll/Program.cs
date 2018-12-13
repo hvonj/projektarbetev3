@@ -7,7 +7,7 @@ using System.Threading;
 
 namespace Projektarbete_Filmkväll
 {
-    class Program
+    public class Program
     {
         private static List<TV> ListOfTV = new List<TV>();
         private static List<Cinema> ListOfCinema = new List<Cinema>();
@@ -377,7 +377,7 @@ namespace Projektarbete_Filmkväll
             {
                 List<TV> tVGenre = listofTV.Where(x => x.Age <= age2 && x.Time >= tid2).ToList();
                 List<TV> newTnew = tVGenre.OrderBy(x => x.Time).ToList();
-
+                
                 foreach (var show in newTnew)
                 {
                     Console.WriteLine($"{show.Name.PadRight(45)} klockan {show.Time}\t\t på {show.Channel}");
