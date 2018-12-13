@@ -19,9 +19,17 @@ namespace Projektarbete_Filmkväll
             string[] userinput = UserInput(ListOfCinema, ListOfTV);
 
             if (userinput != null)
+            {
                 ReturnOutput(userinput, ListOfCinema, ListOfTV);
-
+            }
         }
+
+
+
+
+
+
+
 
         private static List<Cinema> ReadCinemaFile()
         {
@@ -44,6 +52,9 @@ namespace Projektarbete_Filmkväll
             return listofCinema;
         }
 
+
+
+
         private static List<TV> ReadTvFile()
         {
             List<TV> listofTV = new List<TV>();
@@ -65,7 +76,11 @@ namespace Projektarbete_Filmkväll
             return listofTV;
         }
 
-        private static string[] UserInput(List<Cinema> listOfCinema, List<TV> listOfTV) 
+
+
+
+
+        private static string[] UserInput(List<Cinema> listOfCinema, List<TV> listOfTV)
         {
 
             string[] userinput = new string[5];
@@ -87,8 +102,7 @@ namespace Projektarbete_Filmkväll
                 }
             }
 
-            Console.WriteLine();
-            Console.WriteLine($"Välkommen {userinput[0]}! Känner du för hemmakväll eller bio idag (skriv 'allt' för att visa hela tablån)?");
+            Console.WriteLine($"\nVälkommen {userinput[0]}! Känner du för hemmakväll eller bio idag (skriv 'allt' för att visa hela tablån)?");
 
 
             while (true)
@@ -98,12 +112,14 @@ namespace Projektarbete_Filmkväll
                 if (!(userinput[1].ToLower() == "hemmakväll" || userinput[1].ToLower() == "bio" || userinput[1].ToLower() == "allt"))
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
-                    Console.WriteLine("Du måste ange hemmakväll eller bio! \n");
+                    Console.WriteLine("Du måste ange hemmakväll eller bio!\n");
                     Console.ResetColor();
                     continue;
                 }
                 else
+                {
                     break;
+                }
 
             }
             if (userinput[1].ToLower() == "allt")
@@ -114,10 +130,10 @@ namespace Projektarbete_Filmkväll
                 return null;
             }
 
-            Console.WriteLine();
+            
             userinput[1] = userinput[1][0].ToString().ToUpper() + userinput[1].Substring(1);
 
-            Console.WriteLine($"{userinput[1]} säger du, det kan vi lösa. Vad tycker du om för genre?");
+            Console.WriteLine($"\n{userinput[1]} säger du, det kan vi lösa. Vad tycker du om för genre?");
 
             while (true)
             {
@@ -163,8 +179,8 @@ namespace Projektarbete_Filmkväll
                     break;
             }
 
-            Console.WriteLine();
-            Console.WriteLine($"Perfekt! Men hur gammal är du {userinput[0]}?"); //tillåt endast siffror
+            
+            Console.WriteLine($"\nPerfekt! Hur gammal är du {userinput[0]}?"); 
 
             while (true)
             {
@@ -185,16 +201,19 @@ namespace Projektarbete_Filmkväll
                     continue;
                 }
                 else
+                {
                     break;
+                }
             }
 
-            Console.WriteLine();
-            Console.WriteLine("Från vilken tid har du tänkt dig?");
+            
+            Console.WriteLine("\nFrån vilken tid har du tänkt dig?");
 
             while (true)
             {
                 userinput[4] = Console.ReadLine();
-                Match match = Regex.Match(userinput[4], @"^[0-9]\d[:][0-9]\d$");
+                Match match = Regex.Match(userinput[4], @"^[0-9]\d[:][0-9]\d$"); //Här vill vi validera så det blir en giltig tid.
+
                 if (!match.Success)
                 {
                     Console.ForegroundColor = ConsoleColor.Red;
@@ -203,7 +222,9 @@ namespace Projektarbete_Filmkväll
                     continue;
                 }
                 else
+                {
                     break;
+                }
             }
 
             Console.WriteLine();
@@ -226,18 +247,21 @@ namespace Projektarbete_Filmkväll
 
             Console.WriteLine();
 
-            if(userinput[2] == "alla")
+            if (userinput[2] == "alla")
             {
-                Console.WriteLine($"Dessa filmer rekommenderar vi för ikväll!");
-                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                Console.WriteLine($"Dessa filmer rekommenderar vi för ikväll!\n");
+                Console.ResetColor();
 
                 GetAllGenres(listOfTV, listOfCinema, userinput);
             }
 
             else if (userinput[1].ToLower() == "hemmakväll")
             {
-                Console.WriteLine($"Dessa filmer rekommenderar vi för ikväll!");
-                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                Console.WriteLine($"Dessa filmer rekommenderar vi för ikväll!\n");
+                Console.ResetColor();
+
                 List<TV> newTVList = listOfTV.Where(x => x.Genre == genre && x.Age <= age && x.Time >= tid).ToList();
                 List<TV> newnew = newTVList.OrderBy(x => x.Time).ToList();
                 foreach (var show in newnew)
@@ -247,8 +271,9 @@ namespace Projektarbete_Filmkväll
             }
             else if (userinput[1].ToLower() == "bio")
             {
-                Console.WriteLine($"Dessa filmer rekommenderar vi för ikväll!");
-                Console.WriteLine();
+                Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                Console.WriteLine($"Dessa filmer rekommenderar vi för ikväll!\n");
+                Console.ResetColor();
 
                 List<Cinema> newCinemaList = listOfCinema.Where(x => x.Genre == genre && x.Age <= age && x.Time >= tid).ToList();
                 List<Cinema> newCnew = newCinemaList.OrderBy(x => x.Time).ToList();
@@ -257,15 +282,12 @@ namespace Projektarbete_Filmkväll
                     Console.WriteLine($"{show.Name} klockan {show.Time} på {show.Channel}");
                 }
 
-                
+
             }
 
             else
             {
             }
-            //Göra argument exeptions på all input. Gärna med lösningar så programmet kan fortsätta
-
-
             Console.WriteLine();
         }
 
@@ -345,8 +367,8 @@ namespace Projektarbete_Filmkväll
 }
 
 
-// Användaren ska kunna skriva med stora och små bokstäver
-// Exception på genre (lägg till så att användaren inte kan söka på genre som inte finns... "Den genre du angav finns inte tillgänglig ikväll"
+
+
 // Gör textfärger, ändra typsnitt och storlek 
 // Clean code (Linq)
 // Gör ruta/stjärnor eller dylikt runt consolen för att spice'a upp lite :)
