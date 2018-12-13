@@ -173,7 +173,7 @@ namespace Projektarbete_Filmkväll
                 }
             }
 
-
+            Console.WriteLine();
             Console.WriteLine($"Perfekt! Men hur gammal är du {userinput[0]}?"); //tillåt endast siffror
 
             while (true)
@@ -198,6 +198,7 @@ namespace Projektarbete_Filmkväll
                     break;
             }
 
+            Console.WriteLine();
             Console.WriteLine("Från vilken tid har du tänkt dig?");
 
             while (true)
@@ -237,7 +238,7 @@ namespace Projektarbete_Filmkväll
 
             if (userinput[1].ToLower() == "hemmakväll")
             {
-                Console.WriteLine($"Dessa filmer rekommenderar vi för ikväll!)");
+                Console.WriteLine($"Dessa filmer rekommenderar vi för ikväll!");
                 Console.WriteLine();
                 List<TV> newTVList = listOfTV.Where(x => x.Genre == genre && x.Age <= age && x.Time >= tid).ToList();
                 List<TV> newnew = newTVList.OrderBy(x => x.Time).ToList();
@@ -248,7 +249,7 @@ namespace Projektarbete_Filmkväll
             }
             else if (userinput[1].ToLower() == "bio")
             {
-                Console.WriteLine($"Dessa filmer rekommenderar vi för ikväll!)");
+                Console.WriteLine($"Dessa filmer rekommenderar vi för ikväll!");
                 Console.WriteLine();
 
                 List<Cinema> newCinemaList = listOfCinema.Where(x => x.Genre == genre && x.Age <= age && x.Time >= tid).ToList();
