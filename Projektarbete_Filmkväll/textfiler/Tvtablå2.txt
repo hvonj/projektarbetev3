@@ -1,0 +1,23 @@
+﻿SVT2,19:30,drama,Förväxlingen,7
+SVT2,21:45,thriller,The Two Faces of January,15
+TV3,23:00,action,Exodus: Gods and Kings,15
+TV4,22:10,action,Taken 2,11
+KANAL 5,21:00,fantasy,Guardians of the Galaxy,11
+TV6,22:00,komedi,Iron Sky,11
+Kanal 7,21:00,drama,Rebecka Martinsson,11
+Kanal 7,23:00,action,Jumper,11
+TV8,22:00,komedi,Otäcka djur,11
+Kanal 9,23:00,action,The Departed,15
+TV12, 22:05,komedi,Entourage: the movie,11
+Viasat Film Action,16:00,drama,Robot and Frank,7
+Viasat Film Action,18:00,komedi,Bandits,11
+Viasat Film Action,20:00,action,Assassin's Creed,15
+Viasat Film Action,22:00,äventyr,Kingdom of Heaven,15
+Viasat Film Premiere,16:50,komedi,Girls Trip,11
+Viasat Film Premiere,18:50,action,Black Panther,15
+Viasat Film Premiere,21:00,fantasy,Avengers: Infinity War,11
+Viasat Film Premiere,23:30,fantasy,Thor: Ragnarok,11
+Viasat Film Family,17:00,familj,Small Soldiers,0
+Viasat Film Family,19:00,familj,På äventyr med Dino,0
+Viasat Film Family,21:00,komedi,Rough Night,7
+Viasat Film Family,23:00,komedi,The Big Sick,7

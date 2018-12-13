@@ -1,0 +1,50 @@
+﻿Bergakungen,21:00,komedi,7 uczuc,15
+Biopalatset,15:40,drama,A star is born,7
+Biopalatset,17:50,drama,A star is born,7
+Biopalatset,18:30,drama,A star is born,7
+Biopalatset,21:10,drama,A star is born,7
+Bergakungen,17:45,drama,A star is born,7
+Bergakungen,18:15,drama,A star is born,7
+Bergakungen,19:30,drama,A star is born,7
+Biopalatset,15:45,action,Aquaman,11
+Biopalatset,18:00,action,Aquaman,11
+Biopalatset,21:15,action,Aquaman,11
+Bergakungen,16:10,action,Aquaman,11
+Bergakungen,18:00,action,Aquaman,11
+Bergakungen,21:45,action,Aquaman,11
+Bergakungen,20:00,komedi,Bildspotting,15
+Biopalatset,18:40,drama,Bohemian Rapsody,7
+Biopalatset,18:50,drama,Bohemian Rapsody,7
+Biopalatset,20:20,drama,Bohemian Rapsody,7
+Biopalatset,21:30,drama,Bohemian Rapsody,7
+Bergakungen,15:45,drama,Bohemian Rapsody,7
+Bergakungen,15:50,drama,Bohemian Rapsody,7
+Bergakungen,17:15,drama,Bohemian Rapsody,7
+Bergakungen,21:40,drama,Bohemian Rapsody,7
+GötaBion,20:40,drama,Bohemian Rapsody,7
+GötaBion,16:10,drama,Cold War,11
+GötaBion,18:40,drama,Cold War,11
+GötaBion,20:50,drama,Cold War,11
+Biopalatset,21:50,drama,Creed II,11
+Bergakungen,18:50,drama,Creed II,11
+Bergakungen,21:40,drama,Creed II,11
+Biopalatset,18:05,fantasy,Fantastiska Vidunder: Grindelwalds brott,11
+Biopalatset,20:45,fantasy,Fantastiska Vidunder: Grindelwalds brott,11
+Bergakungen,15:40,fantasy,Fantastiska Vidunder: Grindelwalds brott,11
+Bergakungen,20:15,fantasy,Fantastiska Vidunder: Grindelwalds brott,11
+Bergakungen,20:45,fantasy,Fantastiska Vidunder: Grindelwalds brott,11
+Biopalatset,17:20,familj,Grinchen,0
+Bergakungen,15:00,familj,Grinchen,0
+GötaBion,21:00,fantasy,Gräns,15
+Bergakungen,22:20,skräck,Halloween,15
+Biopalatset,16:20,familj,Hodjas flygande matta,0
+Bergakungen,17:50,komedi,Johnny English Strikes Again,7
+Biopalatset,18:10,fantasy,Mortal Engines,11
+Bergakungen,15:20,fantasy,Mortal Engines,11
+Bergakungen,21:30,fantasy,Mortal Engines,11
+Bergakungen,22:15,fantasy,Mortal Engines,11
+Biopalatset,21:40,thriller,Operation Ragnarök,15
+Biopalatset,15:15,fantasy,Spider-Man: Into the Spider-Verse,7
+Bergakungen,18:30,fantasy,Spider-Man: Into the Spider-Verse,7
+Bergakungen,21:15,fantasy,Spider-Man: Into the Spider-Verse,7
+Biopalatset,16:10,familj,Sune vs Sune,7
