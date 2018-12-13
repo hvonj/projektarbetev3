@@ -253,8 +253,6 @@ namespace Projektarbete_Filmkväll
             else
             {
             }
-
-
             //Göra argument exeptions på all input. Gärna med lösningar så programmet kan fortsätta
 
 
