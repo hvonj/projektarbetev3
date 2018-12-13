@@ -224,7 +224,15 @@ namespace Projektarbete_Filmkväll
 
             Console.WriteLine();
 
-            if (userinput[1].ToLower() == "hemmakväll")
+            if(userinput[2] == "alla")
+            {
+                Console.WriteLine($"Dessa filmer rekommenderar vi för ikväll!)");
+                Console.WriteLine();
+
+                GetAllGenres(listOfTV, listOfCinema, userinput);
+            }
+
+            else if (userinput[1].ToLower() == "hemmakväll")
             {
                 Console.WriteLine($"Dessa filmer rekommenderar vi för ikväll!)");
                 Console.WriteLine();
