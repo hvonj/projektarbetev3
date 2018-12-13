@@ -379,7 +379,7 @@ namespace Projektarbete_Filmkväll
             {
                 List<TV> tVGenre = listofTV.Where(x => x.Age <= age2 && x.Time >= tid2).ToList();
                 List<TV> newTnew = tVGenre.OrderBy(x => x.Time).ToList();
-
+                
                 foreach (var show in newTnew)
                 {
                     Console.WriteLine($"{show.Name} klockan {show.Time} på {show.Channel}");
