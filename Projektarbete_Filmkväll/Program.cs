@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 
 namespace Projektarbete_Filmkväll
 {
@@ -13,6 +14,19 @@ namespace Projektarbete_Filmkväll
 
         private static void Main(string[] args)
         {
+            string titelRullar = "Välkommen till Filmkollen!";
+            var title = "";
+            while (true)
+            {
+                for (int i = 0; i < titelRullar.Length; i++)
+                {
+                    title += titelRullar[i];
+                    Console.Title = title;
+                    Thread.Sleep(50);
+                }
+                title = "";
+                break;
+            }
 
             ListOfCinema = ReadCinemaFile();
             ListOfTV = ReadTvFile();
@@ -23,13 +37,6 @@ namespace Projektarbete_Filmkväll
                 ReturnOutput(userinput, ListOfCinema, ListOfTV);
             }
         }
-
-
-
-
-
-
-
 
         private static List<Cinema> ReadCinemaFile()
         {
@@ -52,9 +59,6 @@ namespace Projektarbete_Filmkväll
             return listofCinema;
         }
 
-
-
-
         private static List<TV> ReadTvFile()
         {
             List<TV> listofTV = new List<TV>();
@@ -76,16 +80,15 @@ namespace Projektarbete_Filmkväll
             return listofTV;
         }
 
-
-
-
-
         private static string[] UserInput(List<Cinema> listOfCinema, List<TV> listOfTV)
         {
 
             string[] userinput = new string[5];
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Hej där! Vad heter du? ");
+            Console.ResetColor();
             userinput[0] = Console.ReadLine();
+            
 
             userinput[0] = userinput[0][0].ToString().ToUpper() + userinput[0].Substring(1);
 
@@ -101,9 +104,9 @@ namespace Projektarbete_Filmkväll
                     userinput[0] = "Gäst";
                 }
             }
-
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine($"\nVälkommen {userinput[0]}! Känner du för hemmakväll eller bio idag (skriv 'allt' för att visa hela tablån)?");
-
+            Console.ResetColor();
 
             while (true)
             {
@@ -133,7 +136,9 @@ namespace Projektarbete_Filmkväll
             
             userinput[1] = userinput[1][0].ToString().ToUpper() + userinput[1].Substring(1);
 
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine($"\n{userinput[1]} säger du, det kan vi lösa. Vad tycker du om för genre?");
+            Console.ResetColor();
 
             while (true)
             {
@@ -172,15 +177,18 @@ namespace Projektarbete_Filmkväll
                             Console.ResetColor();
                             continue;
                         }
-
+                    }
+                    else
+                    {
+                        break;
                     }
                 }
-                else
-                    break;
+
             }
 
-            
-            Console.WriteLine($"\nPerfekt! Hur gammal är du {userinput[0]}?"); 
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine($"\nPerfekt! Hur gammal är du {userinput[0]}?");
+            Console.ResetColor();
 
             while (true)
             {
@@ -206,8 +214,9 @@ namespace Projektarbete_Filmkväll
                 }
             }
 
-            
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("\nFrån vilken tid har du tänkt dig?");
+            Console.ResetColor();
 
             while (true)
             {
@@ -281,13 +290,8 @@ namespace Projektarbete_Filmkväll
                 {
                     Console.WriteLine($"{show.Name} klockan {show.Time} på {show.Channel}");
                 }
-
-
             }
 
-            else
-            {
-            }
             Console.WriteLine();
         }
 
