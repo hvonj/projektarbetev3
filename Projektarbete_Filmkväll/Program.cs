@@ -14,7 +14,7 @@ namespace Projektarbete_Filmkväll
 
         private static void Main(string[] args)
         {
-            string titelRullar = "Välkommen till Filmkollen!";
+            string titelRullar = "Välkommen till Filmkoll!";
             var title = "";
             while (true)
             {
