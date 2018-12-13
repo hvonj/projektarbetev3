@@ -22,11 +22,14 @@ namespace Projektarbete_Filmkväll
                 {
                     title += titelRullar[i];
                     Console.Title = title;
-                    Thread.Sleep(50);
+                    Thread.Sleep(40);
                 }
                 title = "";
                 break;
             }
+
+            FilmkollenIntro();
+
 
             ListOfCinema = ReadCinemaFile();
             ListOfTV = ReadTvFile();
@@ -36,6 +39,22 @@ namespace Projektarbete_Filmkväll
             {
                 ReturnOutput(userinput, ListOfCinema, ListOfTV);
             }
+        }
+
+        private static void FilmkollenIntro()
+        {
+            Console.WriteLine("\n\n\n");
+            Console.WriteLine("* * * * *    *   *           *         *  *       *     * *     *          *          *");
+            Console.WriteLine("*            *   *           *  *   *  *  *     *     *     *   *          *          *");
+            Console.WriteLine("*            *   *           *    *    *  *   *      *       *  *          *          *");
+            Console.WriteLine("* * * *      *   *           *         *  * *        *       *  *          *          *");
+            Console.WriteLine("*            *   *           *         *  *   *      *       *  *          *          *");
+            Console.WriteLine("*            *   *           *         *  *     *     *     *   *          *           ");
+            Console.WriteLine("*            *   * * * * *   *         *  *       *     * *     * * * * *  * * * * *  *");
+
+            Console.WriteLine("\nTryck på Enter för att fortsätta...");
+            Console.ReadKey();
+            Console.Clear();
         }
 
         private static List<Cinema> ReadCinemaFile()
