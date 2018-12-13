@@ -87,7 +87,8 @@ namespace Projektarbete_Filmkväll
                 }
             }
 
-            Console.WriteLine($"\nVälkommen {userinput[0]}! Känner du för hemmakväll eller bio idag (skriv 'allt' för att visa hela tablån)?");
+            Console.WriteLine();
+            Console.WriteLine($"Välkommen {userinput[0]}! Känner du för hemmakväll eller bio idag (skriv 'allt' för att visa hela tablån)?");
 
 
             while (true)
