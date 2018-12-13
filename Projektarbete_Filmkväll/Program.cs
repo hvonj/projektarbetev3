@@ -311,8 +311,22 @@ namespace Projektarbete_Filmkväll
             string genre2 = userinput[2].ToLower();
 
             if (userinput[1] == "bio")
+            {
+                List<Cinema> cinemaGenre = listOfCinema.Where(x => x.Age <= age2 && x.Time >= tid2).ToList();
+                List<Cinema> newCnew = cinemaGenre.OrderBy(x => x.Time).ToList();
+                foreach (var show in newCnew)
                 {
-
+                    Console.WriteLine($"{show.Name} klockan {show.Time} på {show.Channel}");
+                }
+            }
+            else
+            {
+                List<TV> tVGenre = listofTV.Where(x => x.Age <= age2 && x.Time >= tid2).ToList();
+                List<TV> newTnew = tVGenre.OrderBy(x => x.Time).ToList();
+                foreach (var show in newTnew)
+                {
+                    Console.WriteLine($"{show.Name} klockan {show.Time} på {show.Channel}");
+                }
             }
         }
     }
