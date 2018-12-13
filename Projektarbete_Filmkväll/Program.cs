@@ -281,18 +281,14 @@ namespace Projektarbete_Filmkväll
 
             if (userinput[2] == "alla")
             {
-                Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                Console.WriteLine($"Dessa filmer rekommenderar vi för ikväll!\n");
-                Console.ResetColor();
+                TextTonight();
 
                 GetAllGenres(listOfTV, listOfCinema, userinput);
             }
 
             else if (userinput[1].ToLower() == "hemmakväll")
             {
-                Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                Console.WriteLine($"Dessa filmer rekommenderar vi för ikväll!\n");
-                Console.ResetColor();
+                TextTonight();
 
                 List<TV> newTVList = listOfTV.Where(x => x.Genre == genre && x.Age <= age && x.Time >= tid).ToList();
                 List<TV> newnew = newTVList.OrderBy(x => x.Time).ToList();
@@ -303,9 +299,7 @@ namespace Projektarbete_Filmkväll
             }
             else if (userinput[1].ToLower() == "bio")
             {
-                Console.ForegroundColor = ConsoleColor.DarkMagenta;
-                Console.WriteLine($"Dessa filmer rekommenderar vi för ikväll!\n");
-                Console.ResetColor();
+                TextTonight();
 
                 List<Cinema> newCinemaList = listOfCinema.Where(x => x.Genre == genre && x.Age <= age && x.Time >= tid).ToList();
                 List<Cinema> newCnew = newCinemaList.OrderBy(x => x.Time).ToList();
@@ -389,6 +383,19 @@ namespace Projektarbete_Filmkväll
                     Console.WriteLine($"{show.Name.PadRight(45)} klockan {show.Time}\t\t på {show.Channel}");
                 }
             }
+        }
+        private static void TextTonight()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkYellow;
+            Console.WriteLine("\n\n\n");
+            Console.WriteLine("                    *   *                   ");
+            Console.WriteLine("*  *   *  *       *   *     *        *      ");
+            Console.WriteLine("*  *  *    *     *   * *    *        *      ");
+            Console.WriteLine("*  **       *   *   *   *   *        *      ");
+            Console.WriteLine("*  *  *      * *   * * * *  *        *      ");
+            Console.WriteLine("*  *   *      *   *       * * * * *  * * * *");
+            Console.ResetColor();
+            Console.WriteLine();
         }
     }
 }
