@@ -268,11 +268,6 @@ namespace Projektarbete_Filmkväll
 
         private static void ReturnOutput(string[] userinput, List<Cinema> listOfCinema, List<TV> listOfTV)
         {
-            //userinput 0 = Namn
-            //userinput 1 = Bio eller hemmakväll
-            //userinput 2 = Genre
-            //userinput 3 = Ålder
-            //userinput 4 = Tid
             int age = int.Parse(userinput[3]);
             TimeSpan tid = TimeSpan.Parse(userinput[4]);
             string genre = userinput[2].ToLower();
@@ -354,11 +349,6 @@ namespace Projektarbete_Filmkväll
 
         static void GetAllGenres(List<TV> listofTV, List<Cinema> listOfCinema, string[] userinput)
         {
-            //userinput 0 = Namn
-            //userinput 1 = Bio eller hemmakväll
-            //userinput 2 = Genre
-            //userinput 3 = Ålder
-            //userinput 4 = Tid
             int age2 = int.Parse(userinput[3]);
             TimeSpan tid2 = TimeSpan.Parse(userinput[4]);
             string genre2 = userinput[2].ToLower();
@@ -399,10 +389,3 @@ namespace Projektarbete_Filmkväll
         }
     }
 }
-
-
-
-
-// Gör textfärger, ändra typsnitt och storlek 
-// Clean code (Linq)
-// Gör ruta/stjärnor eller dylikt runt consolen för att spice'a upp lite :)
